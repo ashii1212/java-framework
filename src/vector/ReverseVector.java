@@ -18,7 +18,7 @@ public class ReverseVector {
         }
         System.out.println("=================Approach 1 without using Collections==========================");
         System.out.println("Reverse :"+reverse(data));
-        System.out.println("==================Approach 1 without using Collections=========================");
+        System.out.println("==================Approach 2 without using Collections=========================");
         System.out.println("Reverse :"+reverseNum(data));
     }
 // Approach 1 without using Collections
@@ -26,9 +26,9 @@ public class ReverseVector {
     {
         Vector<Integer> rev = new Vector<>();
 
-         for(int i=data.size(); i>0;i--)
+         for(int i=data.size()-1; i>=0;i--)
          {
-             rev.add(i);
+             rev.add(data.get(i));
          }
 
          return  rev;
