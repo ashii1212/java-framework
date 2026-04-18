@@ -1,6 +1,7 @@
 package arraylist;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class SortArrayList
 {
@@ -17,33 +18,22 @@ public class SortArrayList
         data.add(25);
         data.add(30);
         data.add(2);
+        System.out.println("Using Collections Ascending Order :");
+        System.out.println(Ascending(data));
+        System.out.println("Using Collections descending Order :");
+        System.out.println(descending(data));
 
-        System.out.println("Max :"+max(data));
-        System.out.println("_______________");
-        System.out.println("Min :"+min(data));
+    }
+   public  static ArrayList<Integer> Ascending(ArrayList<Integer> data)
+   {
+        Collections.sort(data);
+        return data;
+   }
+    public  static ArrayList<Integer> descending(ArrayList<Integer> data)
+    {
+        Collections.sort(data,Collections.reverseOrder());
+        return data;
     }
 
-    public static int max(ArrayList<Integer> data)
-    {
-        int max = Integer.MIN_VALUE;
-        for(int i=0;i<data.size();i++)
-        {
-            if(data.get(i) >max){
-                max = data.get(i);
-            }
-        }
-        return max;
-    }
-    public static int min(ArrayList<Integer> data)
-    {
-        int min = data.get(0);
-        for(int i=0;i<data.size();i++)
-        {
-            if(data.get(i) <min){
-                min = data.get(i);
-            }
-        }
-        return min;
-    }
 
 }
